@@ -83,7 +83,7 @@ void queue_destroy(queue_t *q)
 
     while (q->csize) {
         node = q->ctail;
-        q->ctail = q->tail->next;
+        q->ctail = q->ctail->next;
         free(node);
         --q->csize;
     }
@@ -107,6 +107,7 @@ int queue_push(queue_t *q, void *data)
         return -1;
     }
 
+    node->data = data;
     if (!q->size) {
         node->next = node;
     } else {
