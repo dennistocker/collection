@@ -1,6 +1,8 @@
 #ifndef _HASH_H
 #define _HASH_H
 
+#include <stdlib.h>
+
 typedef struct hash_t_ hash_t;
 
 

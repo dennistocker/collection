@@ -1,5 +1,5 @@
-#include <stdlib.h>
 #include <string.h>
+
 #include "hash.h"
 
 #define slot_num sizeof(slot_size) / sizeof(slot_size[0])

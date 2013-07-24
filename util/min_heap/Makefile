@@ -1,4 +1,4 @@
-TARGET := queue 
+TARGET := heap
 SOURCES := $(wildcard *.c)
 OBJECTS := $(SOURCES: .c=.o)
 

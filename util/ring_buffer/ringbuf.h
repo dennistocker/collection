@@ -2,6 +2,7 @@
 #define _RINGBUF_H
 
 #include <stdlib.h>
+
 typedef struct ringbuf_t_ {
     size_t len;
     size_t start;
