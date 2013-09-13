@@ -2,10 +2,17 @@
 
 #include "bst_tree.h"
 
+typedef struct node_t_ node_t;
+
 struct node_t_ {
-    key_t key;
-    void *data;
-    struct node_t *l, *r, *p;
+    const void *key;
+    void *value;
+    node_t *l, *r;
+};
+
+struct bst_t_ {
+    node_t *root;
+    cmp_t cmp;
 };
 
 
@@ -20,7 +27,11 @@ bst_t bst_create()
 
 void bst_destroy(bst_t tree)
 {
-
+    if (tree) {
+        bst_destroy(tree->l);
+        bst_destroy(tree->r);
+        free(tree);
+    }
 }
 
 void *bst_search(bst_t tree, key_t key)
@@ -32,7 +43,7 @@ int bst_insert(bst_t tree, key_t key, void *data)
 {
 }
 
-int bst_delete(bst_t tree, key_t key)
+void *bst_delete(bst_t tree, key_t key)
 {
 
 }

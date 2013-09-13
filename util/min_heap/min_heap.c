@@ -88,7 +88,7 @@ min_heap_t *min_heap_create(size_t size, cmp_t cmp)
 
 void min_heap_destroy(min_heap_t *heap)
 {
-    if (!heap) {
+    if (heap) {
         free(heap->nodes);
         free(heap);
     }
